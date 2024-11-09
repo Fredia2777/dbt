@@ -1,8 +1,22 @@
-name: my_redshift_project  # Name of your dbt project
+name: my_redshift_project # Name of your dbt project
 version: 1.0.0
+config-version: 2
 
-
-target-path: compiled  # Directory where dbt will store compiled files
-
-model-paths: 
+model-paths:
   - models
+test-paths:
+  - tests
+macro-paths:
+  - macros
+
+target-path: compiled # Directory where dbt will store compiled files
+clean-targets:
+  - compiled
+
+models:
+  source:
+    +materialized: view
+  staging:
+    +materialized: table
+  mart:
+    +materialized: table

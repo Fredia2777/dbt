@@ -1,0 +1,12 @@
+WITH
+base AS (
+    SELECT
+        *
+    FROM
+        "dev"."public"."src__jaffle_shop__payments"
+)
+
+SELECT
+    MAX(created) as max_dt,
+    MIN(created) as min_dt
+FROM base
