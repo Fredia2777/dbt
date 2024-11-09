@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: fct__jaffle_shop__payments_with_orders
+    columns:
+      - name: payment_id
+        tests:
+          - unique
+      - name: original_amount
+        tests:
+          - not_null
+      - name: amount_usd
+        tests:
+          - not_null

@@ -1,0 +1,36 @@
+version: 2
+
+sources:
+  - name: jaffle_shop
+    description: dbt jaffle_shop demo data
+    database: dev
+    schema: public
+    tables:
+      - name: jaffle_shop_orders
+      - name: jaffle_shop_payments
+
+  - name: google_finance
+    description: dbt jaffle_shop demo data
+    database: dev
+    schema: public
+    tables:
+      - name: google_finance_currency
+
+models:
+  - name: src__jaffle_shop__orders
+    columns:
+      - name: id
+        tests:
+          - unique
+
+  - name: src__jaffle_shop__payments
+    columns:
+      - name: id
+        tests:
+          - unique
+
+  - name: src__google_finance__currency
+    columns:
+      - name: convert_rate
+        tests:
+          - not_null
