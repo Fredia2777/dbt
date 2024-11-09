@@ -1,0 +1,8 @@
+name: my_redshift_project  # Name of your dbt project
+version: 1.0.0
+
+
+target-path: compiled  # Directory where dbt will store compiled files
+
+model-paths: 
+  - models
